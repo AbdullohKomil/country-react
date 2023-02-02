@@ -1,3 +1,5 @@
+import '../../App.css'
+
 export const Card = ({ object }) => {
   return (
     <li >
@@ -10,7 +12,7 @@ export const Card = ({ object }) => {
           alt=''
         />
         <div className='card-body'>
-          <h3 className='card-title'>{object.name.common}</h3>
+          <h5 className='card-title'>{object.name.common}</h5>
           <p className='card-text'>Population: {object.population}</p>
           <p className='card-text'>Region: {object.region}</p>
           <p className='card-text'>Capital: {object.capital?.[0]}</p>
