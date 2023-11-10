@@ -4,11 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import { SingleCard } from './components/SingleCard/SingleCard';
 import Header from './components/Header/Header';
-import './App.css'
+import './App.css';
 function App() {
   const elInput = useRef();
   const elSelect = useRef();
-  
+  document.body.classList = localStorage.getItem('theme');
 
   const [country, setCountry] = useState({
     isLoading: false,
@@ -123,7 +123,7 @@ function App() {
         <Route
           path='/'
           element={
-            <main>
+            <main className='pt-5'>
               <section>
                 {' '}
                 <div className='container py-5'>

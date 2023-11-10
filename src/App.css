@@ -26,8 +26,9 @@ button {
 a {
   color: var(--card-color) !important;
 }
+
 .card {
-  color: var(--card-color);
+  color: var(--card-color) !important;
   background-color: var(--card-bg) !important;
 }
 

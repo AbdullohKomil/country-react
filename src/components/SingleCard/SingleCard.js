@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+
+import './SingleCard.scss';
 export const SingleCard = () => {
   const navigate = useNavigate();
   const { name } = useParams();
@@ -23,17 +25,17 @@ export const SingleCard = () => {
 
   return (
     <>
-      <main className='vh-75'>
-        <section className='pb-4'>
-          <div className='container pt-5 pb-5'>
+      <main className=''>
+        <section className='hero'>
+          <div className='container pt-5'>
             <button
               className='my-5 btn btn-danger'
               onClick={() => navigate(-1)}
             >
               BACK
             </button>
-            <div className='row pb-5'>
-              <div className='img-left col-md-6 col-12 d-flex align-items-center '>
+            <div className='row '>
+              <div className='img-left col-md-6 col-12 d-flex align-items-baseline '>
                 <img
                   style={{ maxWidth: '559px' }}
                   src={card.flags?.svg}
@@ -42,31 +44,33 @@ export const SingleCard = () => {
                 />
               </div>
               <div className='text-right col-md-6 col-12 my-auto '>
-                <h5>{card.name?.common}</h5>
+                <h5 className='fs-3'>{card.name?.common}</h5>
                 <ul className='row list-unstyled'>
                   <li className='col-5'>
                     <div className=''>
                       <p className=''>
-                        Native Name:
+                        <strong>Native Name:</strong>
                         {' ' + card.name?.nativeName?.eng?.common}
                       </p>
                       <p className=''>
-                        Population:
+                        <strong>Population:</strong>
                         {' ' + card.population}
                       </p>
                       <p className=''>
-                        Region:
+                        <strong>Region:</strong>
                         {' ' + card.region}
                       </p>
                       <p className=''>
-                        Sub Region:
+                        <strong>Sub Region:</strong>
                         {' ' + card.subregion}
                       </p>
                       <p className=''>
-                        Capital:
+                        <strong>Capital:</strong>
                         {' ' + card.capital?.[0]}
                       </p>
-                      <p>Top Level Domain: {card.tld?.[0]}</p>
+                      <p>
+                        <strong>Top Level Domain:</strong> {card.tld?.[0]}
+                      </p>
                     </div>
                   </li>
                 </ul>

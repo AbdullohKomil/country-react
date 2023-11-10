@@ -1,11 +1,11 @@
-import '../../App.css'
+import '../../App.css';
 
 export const Card = ({ object }) => {
   return (
-    <li >
+    <li>
       <div className='card'>
         <img
-          className='card-img-top'
+          className='card-img-top object-fit-cover'
           width='100%'
           height='150px'
           src={object.flags.svg}

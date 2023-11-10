@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import './Header.scss';
 import '../../App.css';
-import { useEffect, useState } from 'react';
 function Header() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || '');
-  document.body.classList.toggle(localStorage.getItem('theme'));
+  document.body.classList = localStorage.getItem('theme');
 
   return (
     <header>
@@ -21,14 +19,14 @@ function Header() {
             </li>
             <li className='mode__item'>
               <button
+                to='/'
                 onClick={() => {
-                  if (theme == '') {
-                    setTheme('dark');
+                  if (!localStorage.getItem('theme')) {
                     localStorage.setItem('theme', 'dark');
-                    window.location.reload();
+                    document.body.classList = localStorage.getItem('theme');
                   } else {
-                    window.location.reload();
                     localStorage.removeItem('theme');
+                    document.body.classList = localStorage.getItem('');
                   }
                 }}
                 className='mode__button'
